@@ -1,6 +1,10 @@
 'use strict';
 
 module.exports = {
+  plugins: ["ember-template-lint-plugin-prettier"],
+
+  extends: 'octane',
+
   pending: [
     {
       "moduleId": "app/components/addon-review-form",
@@ -171,8 +175,10 @@ module.exports = {
       ]
     }
   ],
-  extends: 'octane',
+
   rules: {
+    prettier: true,
+
     'eol-last': 'always',
     'inline-link-to': true,
     'no-inline-styles': true,

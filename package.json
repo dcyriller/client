@@ -45,7 +45,7 @@
     "ember-cli-inline-content": "0.4.1",
     "ember-cli-mirage": "^1.1.6",
     "ember-cli-moment-shim": "^3.5.0",
-    "ember-cli-sass": "^7.1.5",
+    "ember-cli-sass": "^10.0.1",
     "ember-cli-showdown": "^4.1.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-test-loader": "^2.2.0",
@@ -80,6 +80,7 @@
     "http-proxy": "^1.15.2",
     "loader.js": "^4.7.0",
     "morgan": "^1.9.0",
+    "prettier": "^1.18.2",
     "qunit-dom": "^0.9.2"
   },
   "engines": {
