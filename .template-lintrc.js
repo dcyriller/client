@@ -179,7 +179,6 @@ module.exports = {
   rules: {
     prettier: true,
 
-    'eol-last': 'always',
     'inline-link-to': true,
     'no-inline-styles': true,
     'no-duplicate-attributes': true,
