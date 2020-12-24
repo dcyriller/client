@@ -1,12 +1,21 @@
 <section class="admin-build-result-nav">
-  <LinkTo @route="admin.build-results.index" @query={{hash date=this.formattedPreviousDate}} class="previous-day">
+  <LinkTo
+    @route="admin.build-results.index"
+    @query={{hash date=this.formattedPreviousDate}}
+    class="previous-day"
+  >
     &laquo; previous day
   </LinkTo>
 
-  Builds for {{this.formattedDisplayDate}}
+  Builds for
+  {{this.formattedDisplayDate}}
 
   {{#if this.showFollowingDayLink}}
-    <LinkTo @route="admin.build-results.index" @query={{hash date=this.formattedFollowingDate}} class="next-day">
+    <LinkTo
+      @route="admin.build-results.index"
+      @query={{hash date=this.formattedFollowingDate}}
+      class="next-day"
+    >
       next day &raquo;
     </LinkTo>
   {{/if}}
@@ -32,16 +41,21 @@
           </LinkTo>
         </td>
         <td>{{testResult.version.version}}</td>
-        <td>{{moment-format testResult.testsRunAt 'YYYY-MM-DD HH:mm' allowEmpty=true}}</td>
+        <td>{{moment-format
+            testResult.testsRunAt
+            "YYYY-MM-DD HH:mm"
+            allowEmpty=true
+          }}</td>
         <td>
           {{#if testResult.succeeded}}
             succeeded
           {{else}}
-            failed - {{testResult.statusMessage}}
+            failed -
+            {{testResult.statusMessage}}
           {{/if}}
         </td>
         <td>
-          {{if testResult.canary 'canary' testResult.semverString}}
+          {{if testResult.canary "canary" testResult.semverString}}
         </td>
         <td>
           <LinkTo @route="admin.build-results.show" @model={{testResult.id}}>

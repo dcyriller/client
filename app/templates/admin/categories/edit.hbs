@@ -5,21 +5,30 @@
         Name:
       </label>
       <Input @type="text" @id="name" @value={{this.categoryName}} />
-      <br>
+      <br />
       <label for="description">
         Description:
       </label>
-      <Input @type="text" @id="description" @value={{this.categoryDescription}} />
+      <Input
+        @type="text"
+        @id="description"
+        @value={{this.categoryDescription}}
+      />
       {{#if this.hasSiblingCategories}}
-        <br>
+        <br />
         <label for="position">
           Position:
         </label>
-        <CategoryPositionDropdown @name="position" @position={{this.categoryPosition}} @updatePosition={{action (mut this.categoryPosition)}} @categories={{this.sortedSiblingCategories}} />
+        <CategoryPositionDropdown
+          @name="position"
+          @position={{this.categoryPosition}}
+          @updatePosition={{action (mut this.categoryPosition)}}
+          @categories={{this.sortedSiblingCategories}}
+        />
       {{else}}
         <Input @type="hidden" @id="position" @value={{this.categoryPosition}} />
       {{/if}}
-      <br>
+      <br />
       <label for="parent">
         Parent category:
       </label>
@@ -29,8 +38,8 @@
           <XOption @value={{category.id}}>{{category.name}}</XOption>
         {{/each}}
       </XSelect>
-      <br>
-      <input type="submit" value="Save category">
+      <br />
+      <input type="submit" value="Save category" />
     </fieldset>
   </form>
 
@@ -39,7 +48,9 @@
     {{#if this.subcategories}}
       <ol>
         {{#each this.subcategories as |category|}}
-          <li><LinkTo @route="admin.categories.edit" @model={{category.slug}}>{{category.name}}</LinkTo></li>
+          <li><LinkTo @route="admin.categories.edit" @model={{category.slug}}>{{
+                category.name
+              }}</LinkTo></li>
         {{/each}}
       </ol>
     {{else}}
@@ -51,19 +62,31 @@
         <label for="subcategoryName">
           Name:
         </label>
-        <Input @type="text" @id="subcategoryName" @value={{this.newCategoryName}} />
-        <br>
+        <Input
+          @type="text"
+          @id="subcategoryName"
+          @value={{this.newCategoryName}}
+        />
+        <br />
         <label for="subcategoryDescription">
           Description:
         </label>
-        <Input @type="text" @id="subcategoryDescription" @value={{this.newCategoryDescription}} />
-        <br>
+        <Input
+          @type="text"
+          @id="subcategoryDescription"
+          @value={{this.newCategoryDescription}}
+        />
+        <br />
         <label for="subcategoryPosition">
           Position:
         </label>
-        <CategoryPositionDropdown @name="subcategoryPosition" @position={{this.newCategoryPosition}} @categories={{this.subcategories}} />
-        <br>
-        <input type="submit" value="Add category">
+        <CategoryPositionDropdown
+          @name="subcategoryPosition"
+          @position={{this.newCategoryPosition}}
+          @categories={{this.subcategories}}
+        />
+        <br />
+        <input type="submit" value="Add category" />
       </fieldset>
     </form>
   {{/if}}

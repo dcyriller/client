@@ -1,26 +1,37 @@
 <div class="usage-count">
-  <a href="#" {{action "toggleUsages"}} class="test-usage-count">
+  <a href="#" class="test-usage-count" {{action "toggleUsages"}}>
     {{#if this.showUsages}}
       {{svg-icon "expand-more"}}
     {{else}}
       {{svg-icon "chevron-right"}}
     {{/if}}
-    {{this.count}} {{pluralize this.count "usage"}}
+    {{this.count}}
+    {{pluralize this.count "usage"}}
   </a>
   {{#if this.showUsages}}
     {{#if this.usages}}
       {{#each this.visibleUsages as |usage|}}
         <div class="usage test-usage">
-          <a class="filename" href="{{clean-repo-url this.addon.repositoryUrl}}/tree/master/{{usage.filename}}#L{{usage.line_number}}">
+          <a
+            class="filename"
+            href="{{clean-repo-url this.addon.repositoryUrl}}/tree/master/{{
+              usage.filename
+            }}#L{{usage.line_number}}"
+          >
             {{usage.filename}}:{{usage.line_number}}
           </a>
           {{#each usage.lines as |line|}}
-            <pre class="line"><span class="number">{{pad-line-number line.number usage.lines}}</span><span class={{if (is-equal usage.line_number line.number) 'match'}}>{{line.text}}</span></pre>
+            <pre class="line"><span class="number">{{pad-line-number
+                  line.number
+                  usage.lines
+                }}</span><span
+                class={{if (is-equal usage.line_number line.number) "match"}}
+              >{{line.text}}</span></pre>
           {{/each}}
         </div>
       {{/each}}
       {{#if this.moreUsages}}
-        <a href="#" {{action "viewMore"}} class="view-more">
+        <a href="#" class="view-more" {{action "viewMore"}}>
           See more usages
         </a>
       {{/if}}

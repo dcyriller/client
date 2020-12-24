@@ -1,3 +1,7 @@
 {{#each this.options as |option|}}
-  <RadioButton @onSelect={{action this.select}} @option={{option}} @selected={{this.selected}} />
+  <RadioButton
+    @onSelect={{action this.select}}
+    @option={{option}}
+    @selected={{this.selected}}
+  />
 {{/each}}

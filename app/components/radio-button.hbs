@@ -1,3 +1,7 @@
-<button type="button" {{action this.onSelect this.option}} class={{if this.isSelected 'selected'}}>
+<button
+  type="button"
+  class={{if this.isSelected "selected"}}
+  {{action this.onSelect this.option}}
+>
   {{this.option.label}}
 </button>

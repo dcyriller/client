@@ -9,7 +9,7 @@
 {{else}}
   {{#if this.hasBeenReviewedAndScored}}
     <span class="score" data-score={{to-fixed this.addon.score 0}}>
-      {{#if (is-equal this.addon.score 10) }}
+      {{#if (is-equal this.addon.score 10)}}
         {{yield (to-fixed this.addon.score 0)}}
       {{else}}
         {{yield (to-fixed this.addon.score 1)}}

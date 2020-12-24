@@ -1,12 +1,21 @@
 <DateNav @date={{this.date}} as |nav|>
-  <LinkTo @route="admin.size-calculation-results.index" @query={{hash date=nav.formattedPreviousDate}} @class="previous-day">
+  <LinkTo
+    @route="admin.size-calculation-results.index"
+    @query={{hash date=nav.formattedPreviousDate}}
+    @class="previous-day"
+  >
     &laquo; previous day
   </LinkTo>
 
-  Size calculation results for {{nav.formattedDisplayDate}}
+  Size calculation results for
+  {{nav.formattedDisplayDate}}
 
   {{#if nav.showFollowingDayLink}}
-    <LinkTo @route="admin.size-calculation-results.index" @query={{hash date=nav.formattedFollowingDate}} @class='next-day'>
+    <LinkTo
+      @route="admin.size-calculation-results.index"
+      @query={{hash date=nav.formattedFollowingDate}}
+      @class="next-day"
+    >
       next day &raquo;
     </LinkTo>
   {{/if}}
@@ -24,23 +33,31 @@
   </thead>
   <tbody>
     {{#each this.sortedSizeCalculationResults as |result|}}
-      <tr class="test-size-calculation-result" data-sizeCalculationResultId={{result.id}}>
+      <tr
+        class="test-size-calculation-result"
+        data-sizeCalculationResultId={{result.id}}
+      >
         <td>
           <LinkTo @route="addons.show" @model={{result.version.addon.name}}>
             {{result.version.addon.name}}
           </LinkTo>
         </td>
         <td>{{result.version.version}}</td>
-        <td>{{moment-format result.testsRunAt 'YYYY-MM-DD HH:mm' allowEmpty=true}}</td>
+        <td>{{moment-format result.testsRunAt "YYYY-MM-DD HH:mm" allowEmpty=true
+          }}</td>
         <td>
           {{#if result.succeeded}}
             succeeded
           {{else}}
-            failed - {{result.errorMessage}}
+            failed -
+            {{result.errorMessage}}
           {{/if}}
         </td>
         <td>
-          <LinkTo @route="admin.size-calculation-results.show" @model={{result.id}}>
+          <LinkTo
+            @route="admin.size-calculation-results.show"
+            @model={{result.id}}
+          >
             details
           </LinkTo>
         </td>

@@ -4,7 +4,11 @@
   {{else if this.loadDependencies.last.isError}}
     <p class="uncollapse test-uncollapse-error">Unable to load addons</p>
   {{else}}
-    <a href="#" class="uncollapse test-show-dependents" {{action (perform this.loadDependencies)}}>Show addons</a>
+    <a
+      href="#"
+      class="uncollapse test-show-dependents"
+      {{action (perform this.loadDependencies)}}
+    >Show addons</a>
   {{/if}}
 {{else}}
   {{#if this.addonHasDependencies}}
@@ -19,7 +23,11 @@
             {{#if (or this.showingAllDependencies (lt index this.limit))}}
               <tr>
                 <td class="test-dev-dependency-{{dependency.packageName}}">
-                  <LinkTo @route="addons.show" @model={{dependency.packageName}} class="test-dependency-name">{{dependency.packageName}}</LinkTo>
+                  <LinkTo
+                    @route="addons.show"
+                    @model={{dependency.packageName}}
+                    class="test-dependency-name"
+                  >{{dependency.packageName}}</LinkTo>
                 </td>
               </tr>
             {{/if}}
@@ -30,7 +38,13 @@
             <tr><td>...</td></tr>
             <tr>
               <td>
-                <a href="#" class="more test-show-all-dependencies" {{action (mut this.showingAllDependencies) true}}>Show {{this.hiddenDevDependencyCount}} more</a>
+                <a
+                  href="#"
+                  class="more test-show-all-dependencies"
+                  {{action (mut this.showingAllDependencies) true}}
+                >Show
+                  {{this.hiddenDevDependencyCount}}
+                  more</a>
               </td>
             </tr>
           {{/if}}
@@ -45,7 +59,11 @@
             {{#if (or this.showingAllDependencies (lt index this.limit))}}
               <tr>
                 <td class="test-dependency-{{dependency.packageName}}">
-                  <LinkTo @route="addons.show" @model={{dependency.packageName}} class="test-dependency-name">{{dependency.packageName}}</LinkTo>
+                  <LinkTo
+                    @route="addons.show"
+                    @model={{dependency.packageName}}
+                    class="test-dependency-name"
+                  >{{dependency.packageName}}</LinkTo>
                   {{#if dependency.size}}
                     <DependencySize @addonSize={{dependency.size}} />
                   {{/if}}
@@ -59,15 +77,23 @@
             <tr><td>...</td></tr>
             <tr>
               <td>
-                <a href="#" class="more test-show-all-dependencies" {{action (mut this.showingAllDependencies) true}}>Show {{this.hiddenDependencyCount}} more</a>
+                <a
+                  href="#"
+                  class="more test-show-all-dependencies"
+                  {{action (mut this.showingAllDependencies) true}}
+                >Show
+                  {{this.hiddenDependencyCount}}
+                  more</a>
               </td>
             </tr>
           {{/if}}
         </table>
       </div>
     </div>
-    <hr>
+    <hr />
   {{else}}
-    <p class="no-addons description test-no-addons-message">{{this.noAddonsMessage}}</p>
+    <p class="no-addons description test-no-addons-message">{{
+        this.noAddonsMessage
+      }}</p>
   {{/if}}
 {{/if}}

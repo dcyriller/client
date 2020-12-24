@@ -1,20 +1,29 @@
-<form {{action "addCategory" on="submit"}} class="with-default-styling">
+<form class="with-default-styling" {{action "addCategory" on="submit"}}>
   <fieldset>
     <label for="name">
       Name:
     </label>
     <Input @type="text" @id="name" @value={{this.newCategoryName}} />
-    <br>
+    <br />
     <label for="description">
       Description:
     </label>
-    <Input @type="text" @id="description" @value={{this.newCategoryDescription}} />
-    <br>
+    <Input
+      @type="text"
+      @id="description"
+      @value={{this.newCategoryDescription}}
+    />
+    <br />
     <label for="position">
       Position:
     </label>
-    <CategoryPositionDropdown @name="position" @position={{this.newCategoryPosition}} @updatePosition={{action (mut this.newCategoryPosition)}} @categories={{this.sortedTopLevelCategories}} />
-    <br>
-    <input type="submit" class="button" value="Add category">
+    <CategoryPositionDropdown
+      @name="position"
+      @position={{this.newCategoryPosition}}
+      @updatePosition={{action (mut this.newCategoryPosition)}}
+      @categories={{this.sortedTopLevelCategories}}
+    />
+    <br />
+    <input type="submit" class="button" value="Add category" />
   </fieldset>
 </form>

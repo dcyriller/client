@@ -1,4 +1,9 @@
 <PageLayout @showCategories={{true}} @showHeaderSearch={{false}}>
   <LargeSearch @query={{this.query}} @searchReadmes={{this.searchReadmes}} />
-  <RouteIndex @class="route-index" @topAddons={{this.model.topAddons}} @newAddons={{this.model.newAddons}} @recentlyScoredAddons={{this.model.recentlyScoredAddons}} />
+  <RouteIndex
+    @class="route-index"
+    @topAddons={{this.model.topAddons}}
+    @newAddons={{this.model.newAddons}}
+    @recentlyScoredAddons={{this.model.recentlyScoredAddons}}
+  />
 </PageLayout>
