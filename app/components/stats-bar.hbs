@@ -70,7 +70,8 @@
   {{#each this.addon.keywords as |keyword|}}
     <CommaSeparated
       @list={{this.addon.keywords}}
-      @item={{keyword}} as |value separator|
+      @item={{keyword}}
+      as |value separator|
     >
       {{value.keyword}}{{separator}}
     </CommaSeparated>

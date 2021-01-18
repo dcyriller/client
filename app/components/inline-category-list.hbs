@@ -1,7 +1,8 @@
 {{#each this.categoriesSortedByAddonCount as |category|}}
   <CommaSeparated
     @list={{this.categoriesSortedByAddonCount}}
-    @item={{category}} as |value separator|
+    @item={{category}}
+    as |value separator|
   >
     <LinkTo @route="categories.show" @model={{value.slug}}>
       {{#if this.showWithoutParent}}

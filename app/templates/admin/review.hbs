@@ -7,7 +7,8 @@
           @selected={{this.selectedList}}
           @searchField="title"
           @dropdownClass="test-list-select-dropdown"
-          @onchange={{action this.selectList}} as |option|
+          @onchange={{action this.selectList}}
+          as |option|
         >
           {{option.title}}
         </PowerSelect>

@@ -6,9 +6,8 @@
         <div class="question">{{question.text}}</div>
         <ExclusiveButtonGroup
           @selectedValue={{get this.reviewProperties question.fieldName}}
-          @updateSelectedValue={{
-            action this.selectOption question.fieldName
-          }} as |btn|
+          @updateSelectedValue={{action this.selectOption question.fieldName}}
+          as |btn|
         >
           {{component btn value=1 label="Yes"}}
           {{component btn value=2 label="No"}}

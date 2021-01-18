@@ -13,7 +13,8 @@
             @placeholder="Search"
             @dropdownClass="test-header-search-dropdown"
             @noMatchesMessage="No matching addon names, try another search!"
-            @onchange={{action (perform this.goToAddon)}} as |addonName options|
+            @onchange={{action (perform this.goToAddon)}}
+            as |addonName options|
           >
             {{#if addonName.isFullSearchLink}}
               <LinkTo

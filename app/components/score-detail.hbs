@@ -19,7 +19,8 @@
     {{#if this.fetchScoreCalculation.lastSuccessful.value}}
       <ul>
         {{#each
-          this.fetchScoreCalculation.lastSuccessful.value.info.checks as |check|
+          this.fetchScoreCalculation.lastSuccessful.value.info.checks
+          as |check|
         }}
           <li class="score-component test-score-component">
             <div class="score-component-description">

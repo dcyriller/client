@@ -5,7 +5,8 @@
     @searchField="displayName"
     @dropdownClass="test-category-chooser-dropdown"
     @placeholder="Select categories"
-    @onchange={{this.onchange}} as |category option|
+    @onchange={{this.onchange}}
+    as |category option|
   >
     {{category.displayName}}
     {{#if (not (includes option.selected category))}}{{#if category.description
